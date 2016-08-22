@@ -1,0 +1,12 @@
+.area {
+  cursor: pointer;
+  color: crimson;
+}
+
+.area:hover {
+  text-decoration: underline;
+}
+
+#show-output {
+  display: none;
+}
