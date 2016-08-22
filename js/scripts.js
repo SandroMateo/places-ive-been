@@ -1,23 +1,16 @@
 function Trip(location, landmarks, year, notes) {
   this.location = location;
-  this.landmarks = [landmarks];
+  this.landmarks = landmarks;
   this.year = year;
-  this.notes = [notes];
-}
-
-Trip.prototype.addLandmark = function(landmark){
-  this.landmarks.push(landmark);
-}
-
-Trip.prototype.addNotes = function(note){
-  this.notes.push(note);
+  this.notes = notes;
 }
 
 $(function() {
+  var inputLandmarks = [];
   $("form").submit(function(event) {
     event.preventDefault();
     var inputLocation = $("#location").val();
-    var inputLandmarks = $("#landmarks").val();
+    inputLandmarks.push(" " + $("#landmarks").val());
     var inputYear = $("#year").val();
     var inputNotes = $("#notes").val();
 
@@ -34,4 +27,11 @@ $(function() {
       $("#show-output").show();
     });
   });
+  $("#plusLandmark").click(function () {
+    inputLandmarks.push(" " + $("#landmarks").val());
+    $("#landmarks").val("");
+  });
+  $("#reset").click(function(){
+    inputLandmarks=[];
+  })
 });

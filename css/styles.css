@@ -1,3 +1,10 @@
+.form-control {
+  width: 35em;
+}
+.btn-success {
+  float: right;
+  margin-top: -2.5em;
+}
 .area {
   cursor: pointer;
   color: crimson;
